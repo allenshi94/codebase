@@ -1,0 +1,8 @@
+<sshtunnel>
+	<name>MyTunnel</name>
+	<host></host>
+	<port>22</port>
+	<login></login>
+	<privkey></privkey>
+	<autostart>0</autostart>
+</sshtunnel>

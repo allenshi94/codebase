@@ -1,0 +1,278 @@
+/*
+ * 【通用组件】用于多个页面的公共组件
+ *  by: zhaoxin@csdn.net
+ *  2012-10-05 AM
+ */
+(function (window) {
+
+    var csdn = window.csdn || { }
+    csdn.comp = {};
+    /*
+     * 滑动门(tab)
+     * param <object> 配置项
+     */
+    csdn.comp.tab = function (conf) {
+        this.conf = conf;
+        this.Dom = {};
+        this.init.apply(this, []);
+    };
+    csdn.comp.tab.prototype = {
+        init:function () {
+            var id = this.conf.id;
+            this.Dom.title = $("#" + id + " .tit");
+            this.Dom.li = $("#" + id + " .tit li");
+            this.Dom.con = $("#" + id + " .con");
+            this.addEvent();
+        },
+        addEvent:function () {
+            var that = this,
+                highlight = this.conf.highlight,
+                callback = this.conf.callback;
+            this.Dom.title.bind("click", function (e) {
+                var target = e.target, item = {}, index = 0;
+                if (target.tagName == "UL") {
+                    return;
+                }
+                that.Dom.li.each(function (i) {
+                    item = that.Dom.li[i];
+                    $(item).removeClass(highlight);
+                    if (target !== item) {
+                        that.Dom.con[i].style.display = "none";
+                    } else {
+                        $(item).addClass(highlight);
+                        that.Dom.con[i].style.display = "block";
+                        index = i;
+                    }
+                });
+                if (typeof callback == "function") {
+                    callback(index);
+                }
+            })
+        }
+    };
+
+    /*
+     * 字符数量限制
+     * param <object> 配置项
+     */
+    csdn.comp.txtCounter = function (conf) {
+        this.conf = conf;
+        this.Dom = {};
+        this.init.apply(this, []);
+    };
+    csdn.comp.txtCounter.prototype = {
+        init:function () {
+            this.Dom.btn = this.conf.btn;
+            this.Dom.textarea = this.conf.textarea;
+            this.Dom.max = this.conf.max;
+            this.Dom.tip = this.conf.tip;
+            this.addEvent();
+        },
+        addEvent:function () {
+            var that = this,
+                btn = this.Dom.btn,
+                textarea = this.Dom.textarea,
+                max = this.Dom.max,
+                remain;
+            this.Dom.textarea.keyup(function (e) {
+                var len = csdn.toolkit.computeStrLen(textarea.val())/3;
+                if (len <= max) {
+                    remain = parseInt(max - len);
+                    that.Dom.tip.html("还可以再输入<span>" + remain + "</span>个字");
+                    btn.removeClass("disabled");
+                } else {
+                    remain =  parseInt(len - max);
+                    that.Dom.tip.html("已超出<span>" + remain + "</span>个字");
+                    btn.addClass("disabled");
+                }
+            });
+        }
+    }
+
+    /*
+     * 分页
+     * param <object> 配置项
+     */
+    csdn.comp.pagination = function (conf) {
+        this.conf = conf;
+        this.init.apply(this, []);
+    };
+    csdn.comp.pagination.prototype = {
+        init:function (conf) {
+            conf = conf || this.conf;
+            this.wrap = conf.wrap || this.wrap;
+            this.callback = conf.callback || this.callback;
+            this.render(conf);
+            this.addEvent();
+        },
+        render:function (conf) {
+            var that = this;
+            var size = this.size = conf.size || 10,
+                curr = this.curr = conf.curr * 1 || 1,
+                total = this.total = conf.total || 0;
+            showNum = this.conf.shownum || 10;
+            var totalpage = this.totalpage;
+            totalpage = this.totalpage = parseInt(total / size);
+            (total % size > 0) && totalpage++;
+            var hlClass = conf.hlClass || "on",
+                wrap = this.wrap || conf.wrap;
+
+            //构造页码组
+            var buildPages = function (start, end, pages) {
+                pages = pages || [];
+                if (start < len) {
+                    return
+                }
+                var j = 1;
+                start = start || "0";
+                start = start * 1;
+                end = end || showNum;
+                end = (end > totalpage) ? totalpage : end;
+                var len = (end > totalpage) ? totalpage : end;
+                if (start < len) {
+                    pages.push([start, end]);
+                    buildPages(end, end + showNum, pages);
+                }
+                return pages;
+            };
+
+            //获取当前页码组
+            var fetchPages = function (pages, curr) {
+                for (var i = 0, len = pages.length, item; i < len; i++) {
+                    item = pages[i];
+                    if (curr >= item[0] && curr <= item[1]) {
+                        return item;
+                    }
+                }
+            };
+
+            var pageList = function (curr, pages) {
+                var newPageList = [], _curr;
+                var i = pages[0], len = pages[1];
+                while (i < len) {
+                    _curr = (i == curr - 1) ? 'on' : '';
+                    newPageList.push('<a class="pages ' + _curr + '" href="javascript:void(0);"  lang="' + (i * 1 + 1) + '">' + (i * 1 + 1) + '</a>');
+                    i++;
+                }
+                return newPageList;
+            };
+            pageList = pageList(curr, fetchPages(buildPages(), curr));
+            pageList = pageList.join("");
+            var tpl = '<span style="display:none;">共<span class="num">' + total + '</span>个 </span>共<span class="total">' + totalpage + '</span>页 <a class="homepage" href="javascript:void(0);">首页</a>&nbsp;&nbsp;<a class="prev" href="javascript:void(0);">上一页</a>&nbsp;' + pageList + '&nbsp;<a class="next" href="javascript:void(0);">下一页</a>&nbsp;&nbsp;<a class="endpage" href="javascript:void(0);">末页</a>';
+            wrap.html(tpl);
+        },
+        addEvent:function () {
+            var that = this;
+            $(that.wrap).bind("click", function (e) {
+                that.eventHandler(wrap, e);
+            })
+        },
+        eventHandler:function (wrap, e) {
+            var that = this,
+                target = e.target,
+                hook = {
+                    "pages":function () {
+                        that.setPage($(target).attr("lang"));
+                    },
+                    "homepage":function () {
+                        that.setPage(1);
+                    },
+                    "endpage":function () {
+                        that.setPage(that.totalpage + 1);
+                    },
+                    "prev":function () {
+                        if (that.curr > 1) {
+                            that.setPage(that.curr - 1);
+                        }
+                    },
+                    "next":function () {
+                        if (that.curr < that.totalpage + 1) {
+                            that.setPage(that.curr + 1);
+                        }
+                    }
+                };
+            target = $(target);
+            for (var i in hook) {
+                if (hook.hasOwnProperty(i) && target.hasClass(i)) {
+                    hook[i]();
+                }
+            }
+        },
+        setPage:function (i) {
+            this.conf.curr = i;
+            this.callback(i);
+        }
+    }
+
+    /*
+     * 分页
+     * param <object> 配置项
+     */
+    csdn.comp.tip = function (el, txt) {
+        if (!txt) {
+            return
+        }
+        var tip;
+        if ($(el).parent().find('.noticetip').length > 0) {
+            $(el).parent().find('.noticetip').remove();
+        }
+        tip = $("<div class=\"noticetip\">" + txt + "</div>").insertBefore(el);
+        tip[0].style.left = $(el).offset().left + 'px';
+        tip[0].style.top = $(el).offset().top + 'px';
+        tip.animate({
+            top:'-=30'
+        }, 300, function (e) {
+            $(this).delay(500).animate({
+                opacity:0,
+                top:'-=10'
+            }, 200)
+        });
+    };
+    /*
+     *   新浪分享
+     */
+    csdn.comp.shareSina = function (conf) {
+        var _w = 642 , _h = 320;
+        var param = {
+            url:conf.url,
+            title:conf.title, /**分享的文字内容(可选，默认为所在页面的title)*/
+            type:'2',
+            count:'', /**是否显示分享数，1显示(可选)*/
+            appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+            pic:'', /**分享图片的路径(可选)*/
+            ralateUid:'', /**关联用户的UID，分享微博会@该用户(可选)*/
+            language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+            rnd:new Date().valueOf()
+        };
+        var temp = [];
+        for (var p in param) {
+            temp.push(p + '=' + encodeURIComponent(param[p] || ''))
+        }
+        url = 'http://service.weibo.com/share/share.php?' + temp.join('&');
+        window.open(url, 'newwindow', 'height=' + _h + ',width=' + _w + ',top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+        //$('<iframe allowTransparency="true" frameborder="0" scrolling="no" src= width="'+ _w+'" height="'+_h+'"></iframe>').appendTo(document.body);
+    };
+
+
+    /*
+     * 字符限制
+     * param <object> 配置项
+     */
+    csdn.comp.replaceHolder = function (el, txt) {
+
+
+    };
+
+    window["csdn"] = csdn;
+})(window);
+
+
+����      X�X�=؆XF,   6:http://ptcms.csdn.net/comment/js/componet.js?4923089= necko:classified 1 request-method GET response-head HTTP/1.1 200 OK
+Server: openresty
+Date: Thu, 20 Oct 2016 01:29:11 GMT
+Content-Type: application/javascript; charset=utf-8
+Content-Length: 9792
+Last-Modified: Wed, 08 Jul 2015 10:10:37 GMT
+Etag: "559cf71d-2640"
+Accept-Ranges: bytes
+ uncompressed-len 0   &@

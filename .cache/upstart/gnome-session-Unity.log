@@ -1,0 +1,11 @@
+qrc:/qml/main.qml:11:5: QML BorderImage: Cannot open: qrc:/home/sht/.config/sogou-qimpanel/skin/默认皮肤/skin2.png
+qrc:/qml/main.qml:11:5: QML BorderImage: Cannot open: qrc:/home/sht/.config/sogou-qimpanel/skin/默认皮肤/skin2.png
+inputBackImg width: 56
+inputBackImg height: 58
+mainSkin.marginLeft : 2
+mainSkin.marginRight : 40
+mainSkin.marginTop : 34
+mainSkin.marginBottom : 4
+qrc:/qml/statusBar.qml:263:9: QML Image: Failed to get image from provider: image://status/fan_jian0
+statusBarPic size: 142 29
+qrc:/qml/statusBar.qml:263:9: QML Image: Failed to get image from provider: image://status/fan_jian1

@@ -1,0 +1,148 @@
+2016-10-19 09:15:26,289 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-10-19 09:15:26,333 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-10-19 09:15:27,791 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-10-19 09:15:28,159 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-10-19 09:15:28,196 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-10-19 09:15:28,578 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 09:15:38,328 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-10-19 09:15:43,118 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2016-10-19 09:15:48,097 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-10-19 09:15:48,098 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-10-19 09:15:51,139 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": "sogoupinyin"}']'
+2016-10-19 09:15:51,143 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:404: {'status': '404', 'content-length': '60', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'HIT from sumac.canonical.com', 'age': '265', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache', 'etag': '"4963fbf0dd263e91fab0294c2ecf130b"', 'cache-control': 'max-age=300', 'date': 'Wed, 19 Oct 2016 16:11:23 GMT', 'content-type': 'text/html; charset=utf-8', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128'}
+'
+2016-10-19 09:15:51,156 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: WARNING:__main__:404: {'status': '404', 'content-length': '60', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'HIT from sumac.canonical.com', 'age': '265', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache', 'etag': '"4963fbf0dd263e91fab0294c2ecf130b"', 'cache-control': 'max-age=300', 'date': 'Wed, 19 Oct 2016 16:11:23 GMT', 'content-type': 'text/html; charset=utf-8', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128'}
+
+2016-10-19 09:15:51,156 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent: WARNING:__main__:404: {'status': '404', 'content-length': '60', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'HIT from sumac.canonical.com', 'age': '265', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache', 'etag': '"4963fbf0dd263e91fab0294c2ecf130b"', 'cache-control': 'max-age=300', 'date': 'Wed, 19 Oct 2016 16:11:23 GMT', 'content-type': 'text/html; charset=utf-8', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128'}
+
+2016-10-19 09:15:58,316 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 09:15:59,833 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2016-10-19 09:15:59,851 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-10-19 09:16:01,935 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-10-19 09:17:42,266 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 09:17:43,904 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 09:17:52,284 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: 'None'
+2016-10-19 09:17:52,284 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event
+2016-10-19 09:19:44,490 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-10-19 09:19:44,550 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (没有那个文件或目录)
+2016-10-19 09:19:47,550 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-10-19 09:19:48,729 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-10-19 09:19:48,734 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-10-19 09:19:49,175 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 18:30:56,274 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-10-19 18:30:56,299 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (没有那个文件或目录)
+2016-10-19 18:30:57,317 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-10-19 18:30:57,780 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-10-19 18:30:57,783 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-10-19 18:30:57,891 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 18:31:00,979 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:00,993 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:00,994 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:00,997 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:01,009 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:03,306 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2016-10-19 18:31:04,121 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xe6\x97\xa0\xe6\x95\x88\xe7\x9a\x84\xe5\x8f\x82\xe6\x95\xb0 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-10-19 18:31:04,123 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xe6\x97\xa0\xe6\x95\x88\xe7\x9a\x84\xe5\x8f\x82\xe6\x95\xb0 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-10-19 18:31:06,023 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-10-19 18:31:12,605 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,621 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,625 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,629 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,633 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,636 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,639 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,643 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,646 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:12,649 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:14,491 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2016-10-19 18:31:14,494 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (没有那个文件或目录)
+2016-10-19 18:31:14,516 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (没有那个文件或目录)
+2016-10-19 18:31:14,524 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:14,531 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:35,456 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:35,459 - softwarecenter.db.application - WARNING - no version information found for 'adobe-flashplugin'
+2016-10-19 18:31:35,463 - softwarecenter.ui.gtk3.app - INFO - found a running software-center on dbus, reconnecting
+2016-10-19 18:54:34,684 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-10-19 18:54:37,687 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-10-19 18:54:37,711 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-10-19 18:54:38,110 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 18:54:44,032 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xe6\x97\xa0\xe6\x95\x88\xe7\x9a\x84\xe5\x8f\x82\xe6\x95\xb0 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-10-19 18:54:44,033 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xe6\x97\xa0\xe6\x95\x88\xe7\x9a\x84\xe5\x8f\x82\xe6\x95\xb0 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-10-19 18:54:47,560 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-10-19 18:55:02,629 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2016-10-19 18:55:56,496 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 18:55:57,249 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event
+2016-10-19 18:56:07,338 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 19:03:11,233 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-10-19 19:03:13,266 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-10-19 19:03:14,930 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-10-19 19:03:14,934 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-10-19 19:03:15,318 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-10-19 19:03:16,053 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-10-19 19:03:16,060 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:no data
+'
+2016-10-19 19:03:25,314 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-10-19 19:03:33,101 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-10-19 19:03:38,908 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0

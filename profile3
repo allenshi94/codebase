@@ -1,0 +1,4 @@
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+    # The file bash.bashrc already sets the default PS1.
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc

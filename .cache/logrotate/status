@@ -1,0 +1,21 @@
+logrotate state -- version 2
+"/home/sht/.cache/upstart/indicator-bluetooth.log" 2016-10-28-21:39:38
+"/home/sht/.cache/upstart/at-spi2-registryd.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/dbus.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/update-notifier-crash-_var_crash__usr_bin_vim.basic.1000.crash.log" 2016-10-29-15:29:33
+"/home/sht/.cache/upstart/gnome-keyring-gpg.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/update-notifier-release.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/unity-panel-service.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/indicator-session.log" 2016-10-28-21:39:38
+"/home/sht/.cache/upstart/unity7.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/im-config.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/gnome-keyring-ssh.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/indicator-printers.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/indicator-power.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/gnome-session-Unity.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/indicator-sound.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/upstart-event-bridge.log" 2016-10-25-7:55:48
+"/home/sht/.cache/upstart/window-stack-bridge.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/unity-settings-daemon.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/hud.log" 2016-10-30-14:35:47
+"/home/sht/.cache/upstart/ssh-agent.log" 2016-10-30-14:35:47

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<compiz_session id="102f8a3ab0ab1604a8147766192011378900000023060001">
+  <window id="102f8a3ab0ab1604a8147766436895943000000023060052" title="SSH Tunnel Manager" class="Gstm" name="gstm" command="gstm">
+    <geometry x="375" y="78" width="400" height="460"/>
+    <workspace index="0"/>
+  </window>
+  <window id="102f8a3ab0ab1604a8147766436895943000000023060052" title="Tunnel properties" class="Gstm" name="gstm" command="gstm">
+    <geometry x="269" y="67" width="612" height="482"/>
+    <workspace index="0"/>
+  </window>
+</compiz_session>

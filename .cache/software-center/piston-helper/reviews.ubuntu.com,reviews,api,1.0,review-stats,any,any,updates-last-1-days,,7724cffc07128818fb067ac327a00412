@@ -1,0 +1,38 @@
+status: 200
+content-length: 542
+expires: Thu, 20 Oct 2016 05:31:03 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/review-stats/any/any/updates-last-1-days/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept,Accept-Encoding
+server: gunicorn/19.3.0
+last-modified: Thu, 20 Oct 2016 01:31:03 GMT
+-content-encoding: gzip
+x-bzr-revision-number: 321
+cache-control: max-age=14400
+date: Thu, 20 Oct 2016 01:31:03 GMT
+content-type: application/json; charset=utf-8
+-varied-accept-encoding: gzip, deflate
+
+[
+    {
+        "ratings_total": 2, 
+        "ratings_average": "3.00", 
+        "app_name": "", 
+        "package_name": "album", 
+        "histogram": "[0, 0, 2, 0, 0]"
+    }, 
+    {
+        "ratings_total": 8, 
+        "ratings_average": "3.25", 
+        "app_name": "", 
+        "package_name": "kphotoalbum", 
+        "histogram": "[2, 2, 0, 0, 4]"
+    }, 
+    {
+        "ratings_total": 86, 
+        "ratings_average": "4.37", 
+        "app_name": "", 
+        "package_name": "gthumb", 
+        "histogram": "[4, 6, 1, 18, 57]"
+    }
+]
