@@ -3,80 +3,53 @@
 
 int main()
 {
-	int n, n1, i, j, flag = 1;
+	int i, j;
+	int input[3];
 	int str[3][20] = { 0 };
-	scanf("%d", &n);
-	if (n < 0)
-	{
-		flag = 0;
-		n = -n;
-	}
-	n1 = n;
-	j = 0;
-	if (flag == 0)
-		printf("-");
-	while (n1)
-	{
-		str[0][j] = n1 % 2;
-		n1 /= 2;
-		j++;
-		
-	}
+	for (i = 0; i < 3; i++)
+		scanf("%d", &input[i]);
+	
+	for (i = 0; i < 3; i++)
+		if (input[i] < 0 || input[i] > 168)
+			exit (0);
 
-	while (j > 0)
+	printf("#");
+	for (i = 0; i < 3; i++)
 	{
-		j--;
-		printf("%d", str[0][j]);
 
-	}
-	printf("\n");
+		j = 0;
+		if (input[i] < 14)
+			printf("0");
+		if (input[i] == 0)
+			printf("0");
+		while (input[i])
+		{
+			if (input[i] % 13 < 10)
+				str[i][j] = input[i] % 13 + '0';
+			else
+				str[i][j] = input[i] % 13 - 10 + 'A';
 
-	n1 = n;
-	j = 0;
-	while (n1)
-	{
-		str[1][j] = n1 % 8;
-		n1 /= 8;
-		j++;
-	}
-	if (flag == 0)
-		printf("-");
-	while (j > 0)
-	{
-		j--;
-		printf("%d", str[1][j]);
+			input[i] /= 13;
+			j++;
+		}
+		while (j >-0)
+		{
+			j--;
+			printf("%c", str[i][j]);
 
+		}
 	}
-	printf("\n");
 
 	
-
-	j = 0;
-	while (n)
-	{
-		if (n % 16 < 10)
-			str[2][j] = n % 16;
-		else
-			str[2][j] = n % 16 - 10 + 'A';
-		
-		n /= 16;
-		j++;
-	}
-	if (flag == 0)
-		printf("-");
-	while (j >- 0)
-	{
-		j--;
-		printf("%d", str[2][j]);
-
-	}
 	printf("\n");
-	
-
-			
 
 
-	
+	//for (i = 0; i < 3; i++)
+	//	for (j = sizeof(str[i]); j > 0; j--)
+
+
+
+
 
 	system("pause");
 	return 0;
